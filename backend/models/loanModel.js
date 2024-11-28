@@ -13,6 +13,10 @@ const loanSchema = new mongoose.Schema({
     type : String,
     default : 'PENDING', // Bydefault - > Status is Pending
   },
+  userId: {
+    type : String,
+    required : true, // Bydefault - > Status is Pending
+  },
   repayments : [
     {
       date : Date,

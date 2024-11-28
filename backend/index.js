@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors  = require('cors');
 const {createLoan} = require('./controllers/loanController');
-const loanRoutes = require ('./routes/loanRoutes');
+const loanRoutes = require ('./routes/loanRoutes'); //Imported Loan Routes
 const app = express(); // Intializing Express App
 require('dotenv').config(); // Load Enviroment 
 //Now Middleware
+app.use(express.json()); // Json buddies
+
 app.use(bodyParser.json()); // Parse Json Bodies
 app.use('/api/loans', loanRoutes);
 app.use(cors()); // Cross Origin
